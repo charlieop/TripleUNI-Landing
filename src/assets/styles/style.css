@@ -1,0 +1,50 @@
+/* Gloal Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-text: #0e0e0e;
+    --clr-text-muted: #5d5d5d;
+    --clr-background: #fdfcfc;
+    --clr-background-muted: rgb(247, 243, 249);
+    --clr-background-transparent: rgba(253, 252, 252, 0.8);
+    --clr-primary: rgb(105, 101, 216);
+    --clr-secondary: #f2f2cf;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --clr-text: #0e0e0e;
+    --clr-text-muted: #5d5d5d;
+    --clr-background: #fdfcfc;
+    --clr-background-muted: rgb(247, 243, 249);
+    --clr-background-transparent: rgba(253, 252, 252, 0.8);
+    --clr-primary: rgb(105, 101, 216);
+    --clr-secondary: #f2f2cf;
+  }
+}
+html {
+  color-scheme: light dark;
+}
+
+/* Global Settings */
+:root {
+  --page-padding-inline: 10rem;
+  --nav-height: 7rem;
+}
+
+body {
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+  font-family: var(--ff-primary);
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --page-padding-inline: 5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --page-padding-inline: 2rem;
+  }
+}
