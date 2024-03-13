@@ -308,29 +308,43 @@ h2 {
   .wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 2rem;
+    gap: 7rem;
+    place-items: center;
+    overflow-x: clip;
+  }
+
+  .decoration {
+    width: 85%;
+    height: 100%;
   }
 
   .frame {
-    width: max(10rem, 35vw);
-    left: calc(55% - max(10rem, 35vw));
+    width: max(9rem, 32.5vw);
+    left: calc(55% - max(9rem, 32.5vw));
   }
   .frame:hover {
-    width: max(10.01rem, 35.01vw);
+    width: max(9.01rem, 32.51vw);
   }
   .ball {
-    width: max(4.5rem, 15vw);
+    width: max(4rem, 13vw);
   }
 
   .content {
-    padding-inline: 2rem;
+    padding-inline: 3rem;
   }
+
+  h1 {
+    padding-inline: 3rem;
+  }
+
   h2 {
     font-size: var(--fs-600);
     margin-block: 0.75rem;
+    padding-inline: 2rem;
   }
   .button {
-    margin: 0.75rem 1.75rem;
+    margin: 1.25rem 5.75rem;
+    font-size: var(--fs-400);
   }
   .button:not(.strong) {
     background-color: transparent;
