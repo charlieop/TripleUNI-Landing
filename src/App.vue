@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="landing-background"></div>
+    <!-- <div class="landing-background"></div> -->
     <TheLanding />
     <TheIntroduction />
     <TheFeatures />
@@ -19,11 +19,12 @@ document.addEventListener("touchstart", function () {}, true);
 <style scoped>
 main {
   min-height: 500vh;
+  background-color: var(--clr-background);
 }
 
 .landing-background {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   height: 115vh;
   height: 115svh;

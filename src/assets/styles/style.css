@@ -1,24 +1,18 @@
 /* Gloal Colors */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --clr-text: #0e0e0e;
-    --clr-text-muted: #5d5d5d;
-    --clr-background: #fdfcfc;
-    --clr-background-muted: rgb(247, 243, 249);
-    --clr-background-transparent: rgba(253, 252, 252, 0.8);
-    --clr-primary: rgb(105, 101, 216);
-    --clr-secondary: #f2f2cf;
-  }
 }
 @media (prefers-color-scheme: light) {
   :root {
     --clr-text: #0e0e0e;
     --clr-text-muted: #5d5d5d;
-    --clr-background: #fdfcfc;
+    --clr-background: #ffffff;
     --clr-background-muted: rgb(247, 243, 249);
     --clr-background-transparent: rgba(253, 252, 252, 0.8);
     --clr-primary: rgb(105, 101, 216);
     --clr-secondary: #f2f2cf;
+    --clr-purple: #8761d1;
+    --clr-blue: #67abb8;
+    --clr-red: #e85858;
   }
 }
 html {
