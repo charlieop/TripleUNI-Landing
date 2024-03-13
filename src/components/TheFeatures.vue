@@ -62,26 +62,6 @@ const props = defineProps({});
   gap: 1rem;
 }
 
-@media screen and (max-width: 1200px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
-  }
-  h2 {
-    grid-row: 2 / 3;
-  }
-  .item {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 img {
   max-height: var(--_row-height);
   width: auto;
@@ -114,5 +94,40 @@ h2 {
   text-align: center;
   font-size: 5em;
   font-weight: 900;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  h2 {
+    grid-row: 2 / 3;
+    font-size: 4em;
+  }
+  .item {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    --_row-height: 15rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    place-items: center;
+  }
+  .row p {
+    font-size: var(--fs-900);
+  }
+  .desc {
+    font-size: var(--fs-500);
+  }
+  h2 {
+    font-size: 3.3em;
+    grid-column: unset;
+    grid-row: 3 / 4;
+  }
 }
 </style>
