@@ -87,7 +87,7 @@ const props = defineProps({});
   --_landing-padding: 10svh;
   height: calc(100svh - var(--_landing-padding));
   padding-top: var(--_landing-padding);
-  padding-inline: 8vw;
+  padding-inline: 10vw;
   display: grid;
   place-items: center;
 }
@@ -96,7 +96,7 @@ const props = defineProps({});
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5vw;
+  gap: 8vw;
   align-items: center;
 }
 
@@ -287,7 +287,7 @@ h2 {
 
 @media screen and (max-width: 1200px) {
   .landing-section {
-    padding-inline: 3vw;
+    padding-inline: 7vw;
   }
   .wrapper {
     gap: 3vw;
@@ -297,6 +297,8 @@ h2 {
 @media screen and (max-width: 700px) {
   .landing-section {
     padding-top: 5rem;
+    --_landing-padding: 8svh;
+    padding-inline: 0;
   }
   .logo {
     top: -3rem;
@@ -308,7 +310,7 @@ h2 {
   .wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 7rem;
+    gap: 2.5rem;
     place-items: center;
     overflow-x: clip;
   }
@@ -330,7 +332,7 @@ h2 {
   }
 
   .content {
-    padding-inline: 3rem;
+    padding-inline: 2rem;
   }
 
   h1 {
@@ -343,7 +345,7 @@ h2 {
     padding-inline: 2rem;
   }
   .button {
-    margin: 1.25rem 5.75rem;
+    margin: 1.25rem 1.5rem;
     font-size: var(--fs-400);
   }
   .button:not(.strong) {

@@ -100,6 +100,7 @@ h2 {
   .container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
+    padding: 3rem 1rem;
   }
   h2 {
     grid-row: 2 / 3;
@@ -107,6 +108,7 @@ h2 {
   }
   .item {
     text-align: center;
+    transform: translateX(-20%);
   }
 }
 
@@ -115,8 +117,9 @@ h2 {
     --_row-height: 15rem;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr) auto repeat(2, 1fr);
     place-items: center;
+    gap: 2rem;
   }
   .row p {
     font-size: var(--fs-900);
@@ -128,6 +131,16 @@ h2 {
     font-size: 3.3em;
     grid-column: unset;
     grid-row: 3 / 4;
+  }
+  .item {
+    text-align: center;
+    transform: translateX(-10%);
+  }
+  .item .row {
+    width: 50%;
+  }
+  .desc {
+    margin-block: 0.5rem 0;
   }
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <div class="wrapper">
     <p class="title">Triple Uni</p>
-    <h2>来自三校的我们, 心声共鸣</h2>
+    <h2>
+      <span>来自三校的我们</span><span class="comma">, </span
+      ><span>心声共鸣</span>
+    </h2>
     <div class="flex">
       <p>
         Triple Uni 是接通 "HKU噗噗"、"马料水哔哔机" 及 "Stardust科大星尘"
@@ -48,16 +51,6 @@ h2 {
   justify-content: space-between;
 }
 
-@media screen and (max-width: 700px) {
-  .flex {
-    flex-direction: column;
-    align-items: center;
-  }
-  .logo {
-    max-width: 80%;
-  }
-}
-
 .logo {
   max-width: 30%;
   flex-grow: 0;
@@ -67,5 +60,24 @@ p {
   font-size: var(--fs-500);
   line-height: 1.5;
   max-width: 50ch;
+}
+
+@media screen and (max-width: 700px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+  .logo {
+    max-width: 40%;
+  }
+  h2 {
+    margin-bottom: 3rem;
+  }
+  h2 span {
+    display: block;
+  }
+  .comma {
+    display: none;
+  }
 }
 </style>

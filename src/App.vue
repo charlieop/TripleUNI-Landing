@@ -18,7 +18,6 @@ document.addEventListener("touchstart", function () {}, true);
 
 <style scoped>
 main {
-  min-height: 500vh;
   background-color: var(--clr-background);
 }
 
