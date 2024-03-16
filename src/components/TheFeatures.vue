@@ -44,7 +44,6 @@ const props = defineProps({});
 
 <style scoped>
 .wrapper {
-  padding-block: 15vh;
   padding-block: 15svh;
   padding-inline: var(--page-padding-inline);
 }
@@ -80,7 +79,7 @@ img {
   bottom: 10%;
   left: 70%;
   width: max-content;
-  font-size: var(--fs-800);
+  font-size: var(--fs-700);
 }
 
 .desc {
@@ -128,7 +127,7 @@ h2 {
     font-size: var(--fs-500);
   }
   h2 {
-    font-size: 3.3em;
+    font-size: 2.5em;
     grid-column: unset;
     grid-row: 3 / 4;
   }
@@ -137,7 +136,7 @@ h2 {
     transform: translateX(-10%);
   }
   .item .row {
-    width: 50%;
+    width: 45%;
   }
   .desc {
     margin-block: 0.5rem 0;

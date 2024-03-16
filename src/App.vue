@@ -3,6 +3,7 @@
     <!-- <div class="landing-background"></div> -->
     <TheLanding />
     <TheIntroduction />
+    <TheScroll />
     <TheFeatures />
   </main>
 </template>
@@ -10,7 +11,7 @@
 <script setup>
 import TheLanding from "@/components/TheLanding.vue";
 import TheIntroduction from "./components/TheIntroduction.vue";
-
+import TheScroll from "./components/TheScroll.vue";
 import TheFeatures from "./components/TheFeatures.vue";
 
 document.addEventListener("touchstart", function () {}, true);

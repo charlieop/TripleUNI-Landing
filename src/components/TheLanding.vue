@@ -1,10 +1,10 @@
 <template>
   <section class="landing-section">
     <div class="wrapper">
+      <a class="logo" href="">
+        <img src="@/assets/imgs/U.png" alt="logo" />
+      </a>
       <div class="content">
-        <a class="logo" href="">
-          <img src="@/assets/imgs/U.png" alt="logo" />
-        </a>
         <h1>
           <img
             src="@/assets/imgs/tripleUniB.svg"
@@ -23,7 +23,10 @@
           class="button strong"
           >立即登入</a
         >
-        <div class="button">
+        <a v-if="isMobile" href="https://wxaurl.cn/G4d511Q9Z1k" class="button"
+          >前往小程序版</a
+        >
+        <div v-else class="button">
           使用小程序版
           <div class="hover">
             <img
@@ -69,16 +72,20 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from "vue";
+import { computed, defineProps } from "vue";
 
 const props = defineProps({});
+
+let isMobile = computed(() => {
+  return /iPhone|iPad|iPod|iOS|Android/i.test(navigator.userAgent);
+});
 </script>
 
 <style scoped>
 .logo {
   position: absolute;
-  top: -10rem;
-  left: 0;
+  top: 2rem;
+  left: 2rem;
   width: 5rem;
   aspect-ratio: 1 / 1;
 }
@@ -301,21 +308,27 @@ h2 {
     padding-inline: 0;
   }
   .logo {
-    top: -3rem;
-    left: 50%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
     width: 3.5rem;
-    transform: translate(-50%, -50%);
     aspect-ratio: 1 / 1;
+    /* display: none; */
   }
   .wrapper {
+    height: 100%;
+    padding-top: 3rem;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 7fr 1fr 7fr;
     gap: 2.5rem;
     place-items: center;
     overflow-x: clip;
   }
 
   .decoration {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+
     width: 85%;
     height: 100%;
   }
@@ -332,6 +345,9 @@ h2 {
   }
 
   .content {
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+
     padding-inline: 2rem;
   }
 
