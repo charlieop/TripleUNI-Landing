@@ -130,28 +130,27 @@ let isMobile = computed(() => {
     ),
     radial-gradient(32% 33% at 38% 64%, #8761d188 20%, #00000000 100%),
     radial-gradient(33% 26% at 38% 30%, #e8585888 19%, #00000000 96%);
-  animation: background-movement 10s infinite linear;
+  animation: background-movement 7s infinite linear;
 }
 
 @keyframes background-movement {
   0% {
     background-position: 0px 0px, 0px 0px, 0px 0px;
-    transform: rotate(-7deg);
+    transform: rotate(-10deg);
   }
   25% {
-    background-position: 0px -12px, 20px -15px, -15px 10px;
+    background-position: 0px -17px, 25px -15px, -15px 15px;
   }
   50% {
     transform: scale(1.05);
-    background-position: 7px 0px, 0px 0px, -1.5cm 0cm;
+    background-position: 10px 0px, 0px 0px, 10px 0px;
   }
   75% {
-    background-position: 0px 12px, -20px 15px, -15px -10px;
+    background-position: 0px 13px, -20px 20px, -15px -10px;
   }
   100% {
     background-position: 0px 0px, 0px 0px, 0px 0px;
-    filter: brightness(0.9);
-    transform: rotate(-7deg);
+    transform: rotate(-10deg);
   }
 }
 
@@ -331,6 +330,9 @@ h2 {
 
     width: 85%;
     height: 100%;
+  }
+  .decoration::before {
+    animation: background-movement 5s infinite linear;
   }
 
   .frame {
