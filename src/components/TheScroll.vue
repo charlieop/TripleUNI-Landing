@@ -2,20 +2,34 @@
   <div class="scroll-wrapper">
     <div class="zoom-container">
       <div class="page a">
-        <p>第一页</p>
-        <div class="clr"></div>
+        <p class="title">第一页</p>
+        <div class="clr">
+          <p>Nice</p>
+        </div>
       </div>
       <div class="page b">
-        <p>第二页</p>
-        <div class="clr"></div>
+        <p class="title">第二页</p>
+        <div class="clr">
+          <p>Nice</p>
+          <p>to</p>
+        </div>
       </div>
       <div class="page c">
-        <p>第三页</p>
-        <div class="clr"></div>
+        <p class="title">第三页</p>
+        <div class="clr">
+          <p>Nice</p>
+          <p>to</p>
+          <p>meet</p>
+        </div>
       </div>
       <div class="page d">
-        <p>第四页</p>
-        <div class="clr"></div>
+        <p class="title">第四页</p>
+        <div class="clr">
+          <p>Nice</p>
+          <p>to</p>
+          <p>meet</p>
+          <p>you!</p>
+        </div>
       </div>
     </div>
   </div>
@@ -27,6 +41,7 @@ import { onMounted, computed, defineProps } from "vue";
 const props = defineProps({});
 
 let isMobile = computed(() => {
+  return false;
   return /iPhone|iPad|iPod|iOS|Android/i.test(navigator.userAgent);
 });
 
@@ -62,7 +77,7 @@ onMounted(() => {
   });
 });
 
-function clipPath(startingOffset, numberOfPages, distanceForZoom) {
+function clipPath(startingOffset, numberOfPages) {
   // allowance for fast scrolling
   const allowance = 400;
 
@@ -75,6 +90,14 @@ function clipPath(startingOffset, numberOfPages, distanceForZoom) {
   const pages = document.querySelectorAll(".page");
   for (let i = 1; i < pages.length; i++) {
     const page = pages[i];
+    if (window.innerWidth < 700) {
+      page.style.clipPath = `inset(0 ${
+        ((window.scrollY - startingOffset - i * window.innerHeight) /
+          window.innerHeight) *
+        -100
+      }% 0 0)`;
+      continue;
+    }
     page.style.clipPath = `inset(${
       ((window.scrollY - startingOffset - i * window.innerHeight) /
         window.innerHeight) *
@@ -162,12 +185,14 @@ function scaleContainer(initialOffset, distanceForZoom) {
   display: grid;
   place-items: center;
   grid-template-columns: 1fr 1fr;
+  transition: clip-path 0.05s linear;
+  background-color: color-mix(in lab, var(--_clr) 30%, white 70%);
 }
 
-p {
+.title {
   text-align: center;
   font-size: 5em;
-  background-color: white;
+  background-color: color-mix(in lab, var(--_clr) 10%, white 90%);
   outline: 5px solid var(--_clr);
   padding: 1rem 2rem;
   border-radius: 3rem;
@@ -177,6 +202,14 @@ p {
   background-color: var(--_clr);
   width: 100%;
   height: 100%;
+  padding: 3rem;
+}
+
+.clr p {
+  font-size: 3em;
+  color: white;
+  place-self: center;
+  font-weight: bold;
 }
 
 .a {
