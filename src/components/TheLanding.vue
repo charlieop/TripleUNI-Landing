@@ -18,11 +18,7 @@
           ><span>的</span><span>树</span><span>洞</span><span>平</span
           ><span>台</span>
         </h2>
-        <a
-          href="https://tripleuni.com/login?callback=%2Fhome"
-          class="button strong"
-          >立即登入</a
-        >
+        <a @click="redirect" class="button strong">立即登入</a>
         <a v-if="isMobile" href="https://wxaurl.cn/G4d511Q9Z1k" class="button"
           >前往小程序版</a
         >
@@ -79,6 +75,14 @@ const props = defineProps({});
 let isMobile = computed(() => {
   return /iPhone|iPad|iPod|iOS|Android/i.test(navigator.userAgent);
 });
+
+const redirect = () => {
+  let params = new URLSearchParams(window.location.search);
+  let url = "https://tripleuni.com/login";
+  let link =
+    url + (params.get("callback") ? "?callback=" + params.get("callback") : "");
+  window.location.href = link;
+};
 </script>
 
 <style scoped>
@@ -97,6 +101,7 @@ let isMobile = computed(() => {
   padding-inline: 10vw;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -303,14 +308,15 @@ h2 {
 @media screen and (max-width: 700px) {
   .landing-section {
     padding-top: 5rem;
-    --_landing-padding: 8svh;
+    --_landing-padding: 9svh;
     padding-inline: 0;
   }
   .logo {
     position: absolute;
     top: 1rem;
-    left: 1rem;
-    width: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
     aspect-ratio: 1 / 1;
     /* display: none; */
   }

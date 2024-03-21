@@ -1,15 +1,17 @@
 <template>
   <div class="wrapper">
-    <p class="title">Triple Uni</p>
-    <h2>
-      <span>来自三校的我们</span><span class="comma">, </span
-      ><span>心声共鸣</span>
-    </h2>
     <div class="flex">
-      <p>
-        Triple Uni 是接通 "HKU噗噗"、"马料水哔哔机" 及 "Stardust科大星尘"
-        三校匿名树洞的社交平台，旨在打造港校交流的小宇宙，你将在这里观测到每一颗行星间的碰撞交流～
-      </p>
+      <div class="text-area">
+        <p class="title">Triple Uni</p>
+        <h2>
+          <span>来自三校的我们</span><span class="comma">, </span
+          ><span>心声共鸣</span>
+        </h2>
+        <p>
+          Triple Uni 是接通 "HKU噗噗"、"马料水哔哔机" 及 "Stardust科大星尘"
+          三校匿名树洞的社交平台，旨在打造港校交流的小宇宙，你将在这里观测到每一颗行星间的碰撞交流～
+        </p>
+      </div>
       <img
         src="@/assets/imgs/U.png"
         alt="Triple Uni Logo"
@@ -54,6 +56,20 @@ h2 {
 .logo {
   max-width: 30%;
   flex-grow: 0;
+  transform: translateY(-10%);
+  animation: float 3s infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 p {
@@ -68,7 +84,7 @@ p {
     align-items: center;
   }
   .logo {
-    max-width: 40%;
+    max-width: 50%;
   }
   h2 {
     margin-bottom: 3rem;

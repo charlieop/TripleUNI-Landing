@@ -44,7 +44,7 @@ const props = defineProps({});
 
 <style scoped>
 .wrapper {
-  padding-block: 15svh;
+  padding-block: 20svh;
   padding-inline: var(--page-padding-inline);
 }
 
